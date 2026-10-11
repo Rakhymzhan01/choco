@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin panel | Choco</title>
+<meta name="description" content="Choco – coupons and discounts in Almaty">
+<link rel="icon" href="images/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-guard="admin" data-base="" data-page="admin">
+<header class="site-header" id="site-header"></header>
+<main id="main">
+
+<div class="container admin-wrap">
+  <aside class="admin-side"><h3>ADMIN PANEL</h3>
+    <nav aria-label="Admin navigation">
+      <button type="button" data-section="dashboard">📊 Dashboard</button>
+      <button type="button" data-section="users">👥 Users</button>
+      <button type="button" data-section="deals">🏷️ Products</button>
+      <button type="button" data-section="orders">📦 Bookings</button>
+      <a href="index.html">← Back to site</a>
+      <button type="button" id="admin-logout">⎋ Logout</button>
+    </nav></aside>
+  <div class="admin-main">
+    <section class="admin-sec" id="sec-dashboard"><h1>Dashboard</h1>
+      <div class="stat-cards" id="dash-cards"></div>
+      <div class="two-col">
+        <div class="panel"><h2>Bookings by status</h2><div id="dash-status"></div></div>
+        <div class="panel"><h2>Recent bookings</h2><ul class="recent-list" id="dash-recent"></ul></div>
+      </div></section>
+    <section class="admin-sec" id="sec-users" hidden><h1>Users</h1>
+      <div class="tools"><input type="search" id="user-search" placeholder="Search users…" aria-label="Search users"></div>
+      <div class="table-wrap"><table class="table stack"><thead><tr><th>ID</th><th>Name</th><th>Email</th><th>Phone</th><th>Role</th><th>Bookings</th><th>Registered</th><th></th></tr></thead><tbody id="users-body"></tbody></table></div></section>
+    <section class="admin-sec" id="sec-deals" hidden><h1>Products (deals)</h1>
+      <div class="tools"><input type="search" id="deal-search" placeholder="Search deals…" aria-label="Search deals"><button class="btn btn-primary" id="add-deal" type="button">+ Add deal</button></div>
+      <div class="table-wrap"><table class="table stack"><thead><tr><th>Image</th><th>Title</th><th>Category</th><th>Price</th><th>Discount</th><th>Bought</th><th>Actions</th></tr></thead><tbody id="deals-body"></tbody></table></div></section>
+    <section class="admin-sec" id="sec-orders" hidden><h1>Bookings</h1>
+      <div class="tools"><label for="order-filter" class="sr-only">Filter by status</label><select id="order-filter"><option value="">All statuses</option><option>Pending</option><option>Confirmed</option><option>Completed</option><option>Cancelled</option></select></div>
+      <div class="table-wrap"><table class="table stack"><thead><tr><th>ID</th><th>Customer</th><th>Items</th><th>Visit</th><th>Total</th><th>Status</th></tr></thead><tbody id="orders-body"></tbody></table></div></section>
+  </div>
+</div>
+<div class="modal" id="deal-modal" hidden><div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="deal-modal-title"><h2 id="deal-modal-title">Add new deal</h2>
+<form id="deal-form" novalidate>
+  <input type="hidden" name="dealId">
+  <div class="field"><label for="title">Title <span class="req">*</span></label><input id="title" name="title" type="text" placeholder="Full-day pool pass" ><small class="error" role="alert"></small></div>
+  <div class="row-2"><div class="field"><label for="merchant">Merchant <span class="req">*</span></label><input id="merchant" name="merchant" type="text" placeholder="Aqua Oasis Pool Club" ><small class="error" role="alert"></small></div><div class="field"><label for="category">Category <span class="req">*</span></label><select id="category" name="category" ></select><small class="error" role="alert"></small></div></div>
+  <div class="row-3"><div class="field"><label for="district">District <span class="req">*</span></label><select id="district" name="district" ></select><small class="error" role="alert"></small></div><div class="field"><label for="oldPrice">Regular price (₸) <span class="req">*</span></label><input id="oldPrice" name="oldPrice" type="number" placeholder="5000" min="1"><small class="error" role="alert"></small></div><div class="field"><label for="price">Deal price (₸) <span class="req">*</span></label><input id="price" name="price" type="number" placeholder="2500" min="1"><small class="error" role="alert"></small></div></div>
+  <div class="row-3"><div class="field"><label for="validUntil">Valid until <span class="req">*</span></label><input id="validUntil" name="validUntil" type="date" placeholder="" ><small class="error" role="alert"></small></div><div class="field"><label for="imagePreset">Image (preset)</label><select id="imagePreset" name="imagePreset" ></select><small class="error" role="alert"></small></div><div class="field"><label for="imageUrl">or Image URL <span class="opt">(optional)</span></label><input id="imageUrl" name="imageUrl" type="url" placeholder="https://…" ><small class="error" role="alert"></small></div></div>
+  <div class="field"><label for="description">Description <span class="req">*</span></label><textarea id="description" name="description" rows="4" placeholder="What is the deal about?" ></textarea><small class="error" role="alert"></small></div>
+  <div class="field"><label for="features">Features (one per line) <span class="req">*</span></label><textarea id="features" name="features" rows="3" placeholder="Free parking\nTowels included" ></textarea><small class="error" role="alert"></small></div>
+  <div class="field"><label for="conditions">Conditions <span class="req">*</span></label><textarea id="conditions" name="conditions" rows="3" placeholder="Booking rules, restrictions…" ></textarea><small class="error" role="alert"></small></div>
+  <div class="modal-actions"><button class="btn btn-outline" type="button" id="deal-cancel">Cancel</button><button class="btn btn-primary" type="submit">Save deal</button></div>
+</form></div></div>
+
+</main>
+<footer class="site-footer" id="site-footer"></footer>
+<script src="js/data.js"></script>
+<script src="js/store.js"></script>
+<script src="js/validation.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/layout.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | choco</title>
+<meta name="description" content="choco – coupons and discounts in Almaty">
+<link rel="icon" href="../images/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-base="../" data-page="contact">
+<header class="site-header" id="site-header"></header>
+<main id="main">
+<section class="page-head"><div class="container"><h1>Contact us</h1><p>We usually reply within one business day</p></div></section>
+<div class="container page-body"><div class="contact-grid">
+  <form id="contact-form" class="card-flat" novalidate>
+    <div class="alert alert-success" id="contact-ok" hidden role="status">✓ Thank you! Your message has been sent.</div>
+    <div class="row-2"><div class="field"><label for="name">Name <span class="req">*</span></label><input id="name" name="name" type="text" placeholder="Your name" ><small class="error" role="alert"></small></div><div class="field"><label for="email">Email <span class="req">*</span></label><input id="email" name="email" type="email" placeholder="student@email.com" ><small class="error" role="alert"></small></div></div>
+    <div class="row-2"><div class="field"><label for="phone">Phone <span class="opt">(optional)</span></label><input id="phone" name="phone" type="tel" placeholder="+7 777 123 45 67" ><small class="error" role="alert"></small></div><div class="field"><label for="subject">Subject <span class="req">*</span></label><select id="subject" name="subject" ><option value="">Select a subject</option><option value="Question">General question</option><option value="Booking">Problem with a booking</option><option value="Partnership">Become a partner</option><option value="Other">Other</option></select><small class="error" role="alert"></small></div></div>
+    <div class="field"><label for="message">Message <span class="req">*</span></label><textarea id="message" name="message" rows="4" placeholder="How can we help?" maxlength="1000"></textarea><small class="error" role="alert"></small></div>
+    <button class="btn btn-primary btn-lg" type="submit">Send message</button>
+  </form>
+  <aside class="card-flat"><h2>Get in touch</h2><p>📍 Al-Farabi Ave 34, Almaty</p><p>📞 +7 727 000 00 00</p><p>✉ hello@choco.kz</p><p>🕘 Mon–Sun, 09:00 – 21:00</p></aside>
+</div></div>
+
+</main>
+<footer class="site-footer" id="site-footer"></footer>
+<script src="../js/data.js"></script>
+<script src="../js/store.js"></script>
+<script src="../js/validation.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/cart.js"></script>
+<script src="../js/layout.js"></script>
+<script src="../js/contact.js"></script>
+</body>
+</html>

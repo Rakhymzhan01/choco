@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deals | choco</title>
+<meta name="description" content="choco – coupons and discounts in Almaty">
+<link rel="icon" href="../images/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-base="../" data-page="deals">
+<header class="site-header" id="site-header"></header>
+<main id="main">
+
+<section class="page-head"><div class="container"><h1>All deals</h1><p>Search and filter the best offers in Almaty</p></div></section>
+<div class="container page-body">
+  <form class="filters" id="filters" role="search">
+    <div class="search-line">
+      <input type="search" id="f-q" placeholder="🔍 Search by name, place or keyword…" aria-label="Search deals">
+      <button class="btn btn-primary" type="submit">Search</button>
+      <button class="btn btn-outline" type="button" id="reset-filters">Reset</button>
+    </div>
+    <div class="filter-grid">
+      <div><label for="f-category">Category</label><select id="f-category"></select></div>
+      <div><label for="f-district">District</label><select id="f-district"></select></div>
+      <div><label for="f-price">Max price</label><select id="f-price"><option value="">Any price</option><option value="5000">up to 5 000 ₸</option><option value="10000">up to 10 000 ₸</option><option value="15000">up to 15 000 ₸</option><option value="25000">up to 25 000 ₸</option><option value="100000">up to 100 000 ₸</option></select></div>
+      <div><label for="f-rating">Min rating</label><select id="f-rating"><option value="">Any rating</option><option value="4">4.0+ ★</option><option value="4.5">4.5+ ★</option><option value="4.7">4.7+ ★</option></select></div>
+      <div><label for="f-sort">Sort by</label><select id="f-sort"><option value="popular">Most popular</option><option value="discount">Biggest discount</option><option value="price-asc">Price: low to high</option><option value="price-desc">Price: high to low</option><option value="rating">Top rated</option></select></div>
+    </div>
+  </form>
+  <div class="chips" id="chips" aria-label="Quick categories"></div>
+  <div class="result-bar"><strong id="result-count"></strong></div>
+  <div class="grid" id="deals-grid"></div>
+  <div class="empty" id="empty-state" hidden><div class="empty-icon">🔎</div><h2>No deals found</h2><p>Try changing your search or filters.</p></div>
+</div>
+
+</main>
+<footer class="site-footer" id="site-footer"></footer>
+<script src="../js/data.js"></script>
+<script src="../js/store.js"></script>
+<script src="../js/validation.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/cart.js"></script>
+<script src="../js/layout.js"></script>
+<script src="../js/deals.js"></script>
+</body>
+</html>

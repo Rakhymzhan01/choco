@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My profile | Choco</title>
+<meta name="description" content="Choco – coupons and discounts in Almaty">
+<link rel="icon" href="images/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-guard="user" data-base="" data-page="profile">
+<header class="site-header" id="site-header"></header>
+<main id="main">
+
+<div class="container page-body">
+  <section class="profile-card" id="profile-info"></section>
+  <section class="panel" id="edit-box" hidden>
+    <h2>Edit profile</h2>
+    <form id="edit-form" novalidate>
+      <div class="row-2"><div class="field"><label for="firstName">First Name <span class="req">*</span></label><input id="firstName" name="firstName" type="text" placeholder="" ><small class="error" role="alert"></small></div><div class="field"><label for="lastName">Last Name <span class="req">*</span></label><input id="lastName" name="lastName" type="text" placeholder="" ><small class="error" role="alert"></small></div></div>
+      <div class="row-2"><div class="field"><label for="phone">Phone Number <span class="opt">(optional)</span></label><input id="phone" name="phone" type="tel" placeholder="+7 777 123 45 67" ><small class="error" role="alert"></small></div><div class="field"><label for="dob">Date of Birth <span class="opt">(optional)</span></label><input id="dob" name="dob" type="date" placeholder="" ><small class="error" role="alert"></small></div></div>
+      <div class="field"><label for="photo">New profile photo <span class="opt">(optional)</span></label><input id="photo" name="photo" type="file" placeholder="" accept="image/*"><small class="error" role="alert"></small></div>
+      <div class="modal-actions"><button class="btn btn-outline" type="button" id="edit-cancel">Cancel</button><button class="btn btn-primary" type="submit">Save changes</button></div>
+    </form>
+  </section>
+  <section class="panel" id="orders"><h2>MY BOOKINGS</h2><div id="orders-box"></div></section>
+  <section class="panel"><h2>Change password</h2>
+    <form id="pw-form" novalidate>
+      <div class="row-3"><div class="field"><label for="oldPassword">Current password <span class="req">*</span></label><input id="oldPassword" name="oldPassword" type="password" placeholder="" ><small class="error" role="alert"></small></div><div class="field"><label for="newPassword">New password <span class="req">*</span></label><input id="newPassword" name="newPassword" type="password" placeholder="" ><small class="error" role="alert"></small></div><div class="field"><label for="confirmNewPassword">Confirm new password <span class="req">*</span></label><input id="confirmNewPassword" name="confirmNewPassword" type="password" placeholder="" ><small class="error" role="alert"></small></div></div>
+      <button class="btn btn-primary" type="submit">Update password</button>
+    </form>
+  </section>
+</div>
+
+</main>
+<footer class="site-footer" id="site-footer"></footer>
+<script src="js/data.js"></script>
+<script src="js/store.js"></script>
+<script src="js/validation.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/layout.js"></script>
+<script src="js/profile.js"></script>
+</body>
+</html>

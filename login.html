@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login | Choco</title>
+<meta name="description" content="Choco – coupons and discounts in Almaty">
+<link rel="icon" href="images/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-base="" data-page="login">
+<header class="site-header" id="site-header"></header>
+<main id="main">
+
+<div class="auth-wrap"><div class="auth-card">
+  <div class="auth-logo"><a class="logo" href="index.html"><img src="images/logo.svg" alt="" width="44" height="44"><span>Choco</span></a></div>
+  <h1>Welcome back</h1><p class="auth-sub">Log in to your account</p>
+  <div id="info-alert" class="alert" hidden role="status"></div>
+  <form id="auth-form" novalidate>
+    <div class="field"><label for="email">Email <span class="req">*</span></label><input id="email" name="email" type="email" placeholder="student@email.com" autocomplete="email"><small class="error" role="alert"></small></div>
+    <div class="field"><label for="password">Password <span class="req">*</span></label><input id="password" name="password" type="password" placeholder="••••••••" autocomplete="current-password"><small class="error" role="alert"></small></div>
+    <button class="btn btn-primary btn-lg btn-block" type="submit">Login</button>
+  </form>
+  <div class="auth-links"><p><a href="pages/forgot-password.html">Forgot password?</a></p><p>Don't have an account? <a href="register.html"><strong>Register</strong></a></p></div>
+  <div class="demo-box"><strong>Demo accounts</strong><br>
+    User: demo@Choco.kz / Demo1234 — <button type="button" data-fill="demo@Choco.kz" data-pw="Demo1234">fill</button><br>
+    Admin: admin@Choco.kz / Admin123 — <button type="button" data-fill="admin@Choco.kz" data-pw="Admin123">fill</button></div>
+</div></div>
+
+</main>
+<footer class="site-footer" id="site-footer"></footer>
+<script src="js/data.js"></script>
+<script src="js/store.js"></script>
+<script src="js/validation.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/layout.js"></script>
+<script src="js/auth-pages.js"></script>
+</body>
+</html>

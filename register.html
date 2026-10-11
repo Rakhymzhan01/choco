@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Register | Choco</title>
+<meta name="description" content="Choco – coupons and discounts in Almaty">
+<link rel="icon" href="images/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-base="" data-page="register">
+<header class="site-header" id="site-header"></header>
+<main id="main">
+
+<div class="auth-wrap"><div class="auth-card">
+  <div class="auth-logo"><a class="logo" href="index.html"><img src="images/logo.svg" alt="" width="44" height="44"><span>Choco</span></a></div>
+  <h1>Create account</h1><p class="auth-sub">Join Choco and start saving</p>
+  <div id="info-alert" class="alert" hidden></div>
+  <form id="auth-form" novalidate>
+    <div class="row-2"><div class="field"><label for="firstName">First Name <span class="req">*</span></label><input id="firstName" name="firstName" type="text" placeholder="Aruzhan" autocomplete="given-name"><small class="error" role="alert"></small></div><div class="field"><label for="lastName">Last Name <span class="req">*</span></label><input id="lastName" name="lastName" type="text" placeholder="Sadykova" autocomplete="family-name"><small class="error" role="alert"></small></div></div>
+    <div class="field"><label for="email">Email <span class="req">*</span></label><input id="email" name="email" type="email" placeholder="student@email.com" autocomplete="email"><small class="error" role="alert"></small></div>
+    <div class="row-2"><div class="field"><label for="password">Password <span class="req">*</span></label><input id="password" name="password" type="password" placeholder="••••••••" autocomplete="new-password"><small class="hint">Min. 8 characters, letters and digits</small><small class="error" role="alert"></small></div><div class="field"><label for="confirmPassword">Confirm Password <span class="req">*</span></label><input id="confirmPassword" name="confirmPassword" type="password" placeholder="••••••••" autocomplete="new-password"><small class="error" role="alert"></small></div></div>
+    <div class="row-2"><div class="field"><label for="phone">Phone Number <span class="opt">(optional)</span></label><input id="phone" name="phone" type="tel" placeholder="+7 777 123 45 67" ><small class="error" role="alert"></small></div><div class="field"><label for="dob">Date of Birth <span class="opt">(optional)</span></label><input id="dob" name="dob" type="date" placeholder="" ><small class="error" role="alert"></small></div></div>
+    <div class="field"><label for="photo">Profile Photo <span class="opt">(optional)</span></label><input id="photo" name="photo" type="file" placeholder="" accept="image/*"><small class="error" role="alert"></small></div>
+    <button class="btn btn-primary btn-lg btn-block" type="submit">Register</button>
+  </form>
+  <div class="auth-links"><p>Already have an account? <a href="login.html"><strong>Login</strong></a></p></div>
+</div></div>
+
+</main>
+<footer class="site-footer" id="site-footer"></footer>
+<script src="js/data.js"></script>
+<script src="js/store.js"></script>
+<script src="js/validation.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/layout.js"></script>
+<script src="js/auth-pages.js"></script>
+</body>
+</html>

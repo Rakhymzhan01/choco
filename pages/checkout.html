@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Booking form | choco</title>
+<meta name="description" content="choco – coupons and discounts in Almaty">
+<link rel="icon" href="../images/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-guard="user" data-base="../" data-page="cart">
+<header class="site-header" id="site-header"></header>
+<main id="main">
+<section class="page-head"><div class="container"><h1>Booking form</h1><p>Tell us when you plan to use your coupons</p></div></section>
+<div class="container page-body"><div class="checkout-grid">
+  <form id="checkout-form" class="card-flat" novalidate>
+    <h2>BOOKING FORM</h2>
+    <div class="row-2"><div class="field"><label for="usageDate">Date <span class="req">*</span></label><input id="usageDate" name="usageDate" type="date" placeholder="" ><small class="error" role="alert"></small></div><div class="field"><label for="usageTime">Time <span class="req">*</span></label><select id="usageTime" name="usageTime" ><option value="">Select time</option><option value="09:00">09:00</option><option value="10:00">10:00</option><option value="11:00">11:00</option><option value="12:00">12:00</option><option value="13:00">13:00</option><option value="14:00">14:00</option><option value="15:00">15:00</option><option value="16:00">16:00</option><option value="17:00">17:00</option><option value="18:00">18:00</option><option value="19:00">19:00</option><option value="20:00">20:00</option><option value="21:00">21:00</option></select><small class="error" role="alert"></small></div></div>
+    <div class="row-2"><div class="field"><label for="people">Number of people <span class="req">*</span></label><input id="people" name="people" type="number" placeholder="2" min="1" max="10" value="2"><small class="error" role="alert"></small></div><div class="field"><label for="phone">Phone <span class="req">*</span></label><input id="phone" name="phone" type="tel" placeholder="+7 777 123 45 67" ><small class="error" role="alert"></small></div></div>
+    <div class="field"><label for="payment">Payment method <span class="req">*</span></label><select id="payment" name="payment" ><option value="">Select payment method</option><option value="Online (demo)">Online (demo)</option><option value="Pay at venue (demo)">Pay at venue (demo)</option></select><small class="error" role="alert"></small></div>
+    <div class="field"><label for="comment">Additional information <span class="opt">(optional)</span></label><textarea id="comment" name="comment" rows="4" placeholder="Wishes, allergies, etc." maxlength="400"></textarea><small class="error" role="alert"></small></div>
+    <div class="field"><div class="check-field"><input type="checkbox" id="terms" name="terms"><label for="terms" style="font-weight:400">I agree to the <a href="terms.html" target="_blank">Terms</a> and <a href="privacy.html" target="_blank">Privacy policy</a></label><small class="error" role="alert"></small></div></div>
+    <button class="btn btn-primary btn-lg btn-block" type="submit">Confirm</button>
+  </form>
+  <aside class="summary card-flat"><h2>Your order</h2><ul class="order-list" id="order-items"></ul>
+    <p class="sum-row"><span>Total</span><strong class="price" id="order-total"></strong></p>
+    <a class="btn btn-outline btn-block" href="cart.html">← Back to cart</a></aside>
+</div></div>
+
+</main>
+<footer class="site-footer" id="site-footer"></footer>
+<script src="../js/data.js"></script>
+<script src="../js/store.js"></script>
+<script src="../js/validation.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/cart.js"></script>
+<script src="../js/layout.js"></script>
+<script src="../js/checkout.js"></script>
+</body>
+</html>
