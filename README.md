@@ -1,11 +1,15 @@
 # Choco — coupons & discounts marketplace (Web Programming project)
 
 A complete multi-page website (HTML + CSS + vanilla JavaScript) in the style of a coupon/deals aggregator.
-No server needed — all data lives in the browser's `localStorage`.
+All data lives in PostgreSQL, in normalized tables (see `schema.sql`). `db.php` turns them into the lists the scripts use.
 
 ## How to run
-Open `index.html` in Chrome / Edge / Firefox (double-click). That's it.
-(Optional: `python3 -m http.server 8000` and open http://localhost:8000)
+Needs PostgreSQL and PHP (with `pdo_pgsql`). Create the database once, then start the site:
+```
+createdb choco && psql choco -f schema.sql
+php -S localhost:8000
+```
+Then open http://localhost:8000
 
 ## Demo accounts
 | Role  | Email             | Password |

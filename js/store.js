@@ -1,4 +1,4 @@
-/* Store: tiny "database" on top of localStorage */
+/* Store: the site's data layer, saved in PostgreSQL (see db.php) */
 const Store = (function () {
   const K = {
     users: 'choco_users', deals: 'choco_deals', orders: 'choco_orders',
@@ -6,11 +6,29 @@ const Store = (function () {
     seq: 'choco_order_seq', messages: 'choco_messages'
   };
 
+  // Data is saved in PostgreSQL through db.php. Only the login session stays in this browser.
+  const base = document.body.dataset.base || '';
+  function send(method, key, body) {
+    const x = new XMLHttpRequest();
+    x.open(method, base + 'db.php?key=' + encodeURIComponent(key), false);   // synchronous, so the other scripts need no changes
+    x.send(body);
+    return x;
+  }
+  function load(key) {
+    if (key === K.session) return localStorage.getItem(key);
+    const x = send('GET', key);
+    return x.status === 200 ? x.responseText : null;
+  }
+
   function read(key, def) {
-    try { const v = localStorage.getItem(key); return v ? JSON.parse(v) : def; } catch (e) { return def; }
+    try { const v = load(key); return v ? JSON.parse(v) : def; } catch (e) { return def; }
   }
   function write(key, val) {
-    try { localStorage.setItem(key, JSON.stringify(val)); return true; } catch (e) { return false; }
+    try {
+      const json = JSON.stringify(val);
+      if (key === K.session) { localStorage.setItem(key, json); return true; }
+      return send('PUT', key, json).status === 204;
+    } catch (e) { return false; }
   }
 
   // Demo-grade salted hash (NOT for production – a real site hashes on the server)
@@ -32,7 +50,7 @@ const Store = (function () {
   }
 
   function seed() {
-    if (localStorage.getItem(K.seed)) return;
+    if (read(K.seed, null)) return;
     const now = new Date().toISOString();
     write(K.deals, DEFAULT_DEALS);
     write(K.users, [
@@ -52,7 +70,7 @@ const Store = (function () {
       }
     ]);
     write(K.seq, 10236);
-    localStorage.setItem(K.seed, '1');
+    write(K.seed, 1);
   }
   seed();
 
@@ -74,6 +92,7 @@ const Store = (function () {
     getCart: (uid) => read(K.cart + uid, []),
     saveCart: (uid, c) => write(K.cart + uid, c),
     resetAll: () => {
+      send('DELETE', '');   // empties the PostgreSQL table
       Object.keys(localStorage).filter(k => k.indexOf('choco') === 0).forEach(k => localStorage.removeItem(k));
     }
   };
